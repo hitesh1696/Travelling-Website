@@ -4,7 +4,6 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Destination
 from django.shortcuts import get_object_or_404
-
 def index(request):
     dests = Destination.objects.all()
     return render(request, "index.html", {'dests': dests})
@@ -22,4 +21,9 @@ def destination(request):
     return render(request, "org/destinations.html")
 def search(request):
     dests = Destination.objects.all()
-    return render(request, "org/search_destination.html")
+    if dests.name == id:
+        return render(request, "org/destinations.html")
+    else:
+        print("Destination does not exists")
+    return render(request, "org/destinations.html")
+

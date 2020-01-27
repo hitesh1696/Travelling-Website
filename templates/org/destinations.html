@@ -138,9 +138,9 @@
 									<span class="sorting_text">Categories</span>
 									<i class="fa fa-chevron-down" aria-hidden="true"></i>
 									<ul>
-										<li class="num_sorting_btn"><span>Category</span></li>
-										<li class="num_sorting_btn"><span>Category</span></li>
-										<li class="num_sorting_btn"><span>Category</span></li>
+										<li class="num_sorting_btn"><span>Historical</span></li>
+										<li class="num_sorting_btn"><span>Nature</span></li>
+										<li class="num_sorting_btn"><span>Popular</span></li>
 									</ul>
 								</li>
 							</ul>
@@ -153,36 +153,18 @@
 				<div class="col">
 					<div class="destinations_container item_grid">
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_1.jpg' %}" alt="">
-								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Bali</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+
 
 						<!-- Destination -->
 						<div class="destination item">
+							{% for dest in dests %}
 							<div class="destination_image">
-								<img src="{% static 'images/destination_2.jpg' %}" alt="">
+								<img src="{{dest.img.url}}" alt="">
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="#">Indonesia</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $579</div>
+								<div class="destination_title"><a href="#">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+								<div class="destination_price">{{dest.price}}</div>
 								<div class="destination_list">
 									<ul>
 										<li>5 Stars Hotel</li>
@@ -192,147 +174,10 @@
 									</ul>
 								</div>
 							</div>
+							{% endfor %}
 						</div>
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_3.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">San Francisco</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $399</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_4.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Paris</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $639</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_5.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Phi Phi Island</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $929</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_6.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Mykonos</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $719</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_7.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Paris</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $515</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_8.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Phi Phi Island</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $879</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_9.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="#">Mykonos</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-								<div class="destination_list">
-									<ul>
-										<li>5 Stars Hotel</li>
-										<li>All Inclusive</li>
-										<li>Flight tickets included</li>
-										<li>Guided visits</li>
-									</ul>
-								</div>
-							</div>
-						</div>
 
 					</div>
 				</div>
@@ -345,12 +190,7 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
-
-
 </div>
-
-
                         <script src="{% static 'js/jquery-3.2.1.min.js' %}">
 						</script>
 						<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
@@ -363,9 +203,4 @@
                         <script src="{% static 'js/destinations.js' %}"></script>
 </body>
 </html>
-
-
-
-
-
 {% endblock content %}}

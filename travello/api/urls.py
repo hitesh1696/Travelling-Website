@@ -8,8 +8,8 @@ from .views import DestinationAPIView,DestinationList,DestinationRUD
 urlpatterns = [
 
     path('', views.DestinationList.as_view()),
-    path('/<pk>', views.DestinationRUD.as_view()),
-    path('/<pk>', views.DestinationAPIView.as_view()),
+    path('<pk>', views.DestinationRUD.as_view()),
+    path('<pk>/id', views.DestinationAPIView.as_view()),
 
 ]
 

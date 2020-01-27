@@ -15,11 +15,11 @@
             <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
 
     </head>
-    <body>
+
         {% include 'base/header.html' %}
         <!-- <h1>EMS</h1> -->
 
-
+                 <body>
             {% block content %}
             {% endblock content %}
 
@@ -34,7 +34,7 @@
 						<script src="{% static 'plugins/easing/easing.js' %}"></script>
 						<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 						<script src="{% static 'js/custom.js' %}"></script>
-
+                 </body>
             {% include 'base/footer.html' %}
-    </body>
+
 </html>
